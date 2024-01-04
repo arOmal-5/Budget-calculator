@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <style>
+        #income {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 20px auto;
+    }
+    
+    #income th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    
+    #income th {
+        background-color: #000000;
+        color:white;
+    }
+    
+    #income tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    #expenses {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 20px auto;
+    }
+    
+    #expenses th, td {
+        border: 1px solid #000000;
+        padding: 8px;
+        text-align: left;
+    }
+    
+    #expenses th {
+        background-color: #000000;
+        color:white;
+    }
+    
+    #expenses tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    </style>
+</head>
+<body>
+  <script src="script.js"></script>
+    <nav class="navbar bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <h2 class="text-light">BUDGET CALCULATOR</h2>
+          </a>
+          <h3 id="username"></h3>
+          <button class="Btn1" onclick="logout()">
+  
+            <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+            
+            <div class="text">Logout</div>
+          </button>
+
+          
+          
+          
+          
+        </div>
+        </nav>
+        
+
+        <h1 id="username" class="text-center mt-5 text-primary"></h1>
+
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center ">
+            <div class="col-md-3 border rounded-3 bg-body-tertiary m-2 text-center">
+                <input type="text" class="form-control mt-2 " id="description" placeholder="Enter Description">
+                <input type="text" class="form-control mt-2" id="salary" placeholder="Enter Amount">
+                <button class="btn btn-dark my-2" onclick="savings()">Add Income</button>
+            </div>
+            <div class="col-md-3 border rounded-3 bg-body-tertiary m-2">
+                    <h2 class="text-center mt-3">Your Savings</h2>
+                    <div id="result">
+
+                    </div>
+            </div>
+            <div class="col-md-3 border rounded-3 bg-body-tertiary m-2 text-center">
+                <input type="text" class="form-control mt-2 " id="edescription" placeholder="Enter Description">
+                <input type="text" class="form-control mt-2" id="esalary" placeholder="Enter Amount">
+                <button class="btn btn-dark my-2" onclick="savings()">Add Expense</button>
+            </div>
+            
+        </div>
+
+    </div>    
+    
+    <div class="container mt-5">
+        <div class="row border rounded-3 bg-body-tertiary">
+            <div class="col-md-6 ">
+                <h3 class="text mt-2">INCOME</h3>
+                <table id="income">
+                    <thead>
+                        <tr>
+                            <th class="border border-2 border-dark">Type</th>
+                            <th class="border border-2 border-dark">Amount</th>
+                            <th class="border border-2 border-dark">Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody class="border border-2 border-dark">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h3 class="text mt-2">EXPENSE</h3>
+                <table id="expenses">
+                    <thead>
+                        <tr>
+                            <th class="border border-2 border-dark">Type</th>
+                            <th class="border border-2 border-dark">Amount</th>
+                            <th class="border border-2 border-dark">Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody class="border border-2 border-dark">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
